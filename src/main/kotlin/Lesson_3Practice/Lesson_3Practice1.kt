@@ -2,8 +2,8 @@ package org.example.Lesson_3Practice
 
 fun main() {
 
-    val userName ="Сенпай"
-    var greetings ="Охаё"
+    val userName = "Сенпай"
+    var greetings = "Охаё"
 
     println("$greetings,$userName!")
 
