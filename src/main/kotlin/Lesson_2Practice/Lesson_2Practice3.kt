@@ -5,7 +5,7 @@ fun main() {
     val hour = 9
     val minute = 39
     val travelTime = 457
-    val overMinute = hour * minAndHour + minute + travelTime
+    val overMinute = hour * MIN_AND_HOUR + minute + travelTime
     val arrivalHour = overMinute / 60 % 24
     val arrivalMinute = overMinute % 60
 
@@ -13,4 +13,4 @@ fun main() {
     print(":")
     print(arrivalMinute)
 }
-const val minAndHour = 60
+const val MIN_AND_HOUR = 60
