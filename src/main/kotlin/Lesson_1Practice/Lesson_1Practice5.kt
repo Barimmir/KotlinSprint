@@ -2,17 +2,13 @@ package org.example.Lesson_1Practice
 
 fun main() {
     val seconds = 6480
-    val minute: Int = seconds / 60
-    val hour : Int = minute / 60
-    val remainderMinute = minute - 60
-    val remainderSecond  = seconds - minute * 60
+    val minute: Int = seconds / secAndMin
+    val hour : Int = minute / minAndHour
+    val remainderMinute = minute % minAndHour
+    val remainderSecond = seconds % secAndMin
+    val massage = String.format("O$hour:$remainderMinute:0$remainderSecond")
 
-    print("0")
-    print(hour)
-    print(":")
-    print(remainderMinute)
-    print(":")
-    print(remainderSecond)
-    print("0")
-
+    println(massage)
 }
+const val secAndMin = 60
+const val minAndHour = 60
