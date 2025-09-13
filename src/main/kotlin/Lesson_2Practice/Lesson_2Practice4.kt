@@ -4,8 +4,10 @@ fun main() {
 
     val cristal = 7
     val iron = 11
-    val bafCristal = (cristal * 20) / 100
-    val bafIron: Int = (iron * 20) / 100
+    val bafInterest = 20
+    val maxInterest = 100
+    val bafCristal = (cristal * bafInterest) / maxInterest
+    val bafIron: Int = (iron * bafInterest) / maxInterest
 
     print("Кристалы:")
     print(bafCristal)
