@@ -22,8 +22,8 @@ fun main() {
 
 }
 
-const val MIN_KILOGRAMS = 36
+const val MIN_KILOGRAMS = 35
 const val MAX_KILOGRAMS = 100
 const val MIN_LITERS = 0
-const val MAX_LITERS = 99
+const val MAX_LITERS = 100
 
