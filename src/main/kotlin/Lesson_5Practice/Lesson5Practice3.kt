@@ -19,9 +19,11 @@ fun main() {
     } else if ((number1 == numberWin2 && number2 != numberWin1) ||
         (number1 != numberWin2 && number2 == numberWin1)
     ) {
-        println("“Вы выиграли утешительный приз!")
+        println("Вы выиграли утешительный приз!")
+        println("Правильные числа были $numberWin2 и $numberWin1")
     } else {
         println("Неудача!")
+        println("Правильные числа были $numberWin2 и $numberWin1")
     }
 }
 
