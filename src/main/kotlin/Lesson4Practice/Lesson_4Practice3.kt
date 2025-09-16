@@ -2,12 +2,12 @@ package org.example.Lesson4Practice
 
 fun main() {
 
-    val weather: Boolean = true
-    val awning: Boolean = true
-    val humidity: Int = 20
-    val timeOfYear = "Зима"
-    val result = weather && awning && humidity == 20 && timeOfYear != "Зима"
+    val result: Boolean = WEATHER && AWNING && HUMIDITY == 20 && TIME_OF_YEAR != "Зима"
 
     println("Благоприятные ли условия сейчас для роста бобовых? $result")
-
 }
+
+const val WEATHER: Boolean = true
+const val AWNING: Boolean = true
+const val HUMIDITY: Int = 20
+const val TIME_OF_YEAR: String = "Зима"
