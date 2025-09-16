@@ -4,16 +4,12 @@ fun main() {
 
     val trainingDay = 5
 
-    val arms = trainingDay % 2 == 1
-    val legs = trainingDay % 2 == 0
-    val back = trainingDay % 2 == 0
-    val abs = trainingDay % 2 == 1
+    val howTraining = trainingDay % 2 != 0
 
     println(
-        "Упражнения для рук: $arms\n" +
-                "Упражнения для ног: $legs\n" +
-                "Упражнения для спины: $back\n" +
-                "Упражнения для пресса: $abs"
+        "Упражнения для рук: $howTraining\n" +
+                "Упражнения для ног: ${!howTraining}\n" +
+                "Упражнения для спины: ${!howTraining}\n" +
+                "Упражнения для пресса: $howTraining"
     )
-
 }
