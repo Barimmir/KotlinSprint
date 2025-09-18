@@ -1,14 +1,13 @@
 package org.example.Lesson_5Practice
 
-import kotlin.random.Random
 
 fun main() {
 
-    val randomNumbers = List(3) { Random.nextInt(0, 43) }
+    val randomNumbers = List(3) { (1..42).random() }
 
     println(
         "Добро пожаловтаь к богу рандома!\n" +
-                "Попробуй угадать три числа от 0 до 42!\n" +
+                "Попробуй угадать три числа от 0 до $MAX_NUMBER!\n" +
                 "И помни, удача уважает удачливых!"
     )
 
@@ -48,3 +47,4 @@ fun main() {
     println("Совпадения: ${scan.sorted().joinToString(", ")}")
 }
 
+const val MAX_NUMBER = 42
