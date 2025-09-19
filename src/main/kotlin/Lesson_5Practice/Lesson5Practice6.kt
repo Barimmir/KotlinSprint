@@ -4,12 +4,9 @@ import kotlin.math.pow
 
 fun main() {
 
-    val minBmi = 0f..18.4f
-    val averageBmi = 18.5f..25.0f
-    val highBmi = 25f..30f
-    val criticalBmi = 30f..Float.MAX_VALUE
-
-    val listDegrees = listOf(minBmi, averageBmi, highBmi, criticalBmi)
+    val minBmi = "18.5"
+    val averageBmi = "25"
+    val highBmi = "30"
 
     println(
         "Здравствуйте, вас привествует программа по определению ИМТ.\n" +
@@ -31,15 +28,13 @@ fun main() {
     val result = "%.2f".format(formulaBmi)
     println("Вас ИМТ: $result")
 
-    val degrees = listDegrees.indexOfFirst { range -> formulaBmi as Float in range }
-
-    when (degrees) {
-        0 -> println("Недостаточная масса тела")
-        1 -> println("Нормальная масса тела")
-        2 -> println("Избыточная масса тела")
-        3 -> println("Ожирение")
+    val degrees = when {
+        result < minBmi -> "Недостаточная масса тела"
+        result < averageBmi -> "Нормальная масса тела"
+        result < highBmi -> "Избыточная масса тела"
+        else -> "Ожирение"
     }
-
+    println(degrees)
 }
 
 const val SM_IN_METERS = 100f
