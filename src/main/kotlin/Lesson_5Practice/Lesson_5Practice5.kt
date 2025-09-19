@@ -3,7 +3,7 @@ package org.example.Lesson_5Practice
 
 fun main() {
 
-    val randomNumbers = List(3) { (1..42).random() }
+    val randomNumbers = List(3) { (1..MAX_NUMBER).random() }
 
     println(
         "Добро пожаловтаь к богу рандома!\n" +
