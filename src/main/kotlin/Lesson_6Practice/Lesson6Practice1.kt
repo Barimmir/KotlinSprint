@@ -19,9 +19,11 @@ fun main() {
     println("Введите пароль:")
     var passwordAuth = readlnOrNull().toString()
 
-    while (loginAuth != loginReg && passwordAuth != passwordReg){
-        println("Введите данные снова\n" +
-                "Введите логин:")
+    while (loginAuth != loginReg && passwordAuth != passwordReg) {
+        println(
+            "Введите данные снова\n" +
+                    "Введите логин:"
+        )
         loginAuth = readlnOrNull().toString()
 
         println("Введите пароль:")
