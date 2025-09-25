@@ -6,7 +6,7 @@ fun main() {
     val numberWin2 = 5
 
     println(
-        "Угадайте два числа от $MIN_NUMBER до $MAX_NUMBER для победы!\n" +
+        "Угадайте два числа от $MIN_NUMBER до $MAX_NUMBERS для победы!\n" +
                 "Введите первое число:"
     )
     val number1 = readln().toInt()
@@ -32,4 +32,4 @@ fun main() {
 }
 
 const val MIN_NUMBER = 0
-const val MAX_NUMBER = 42
+const val MAX_NUMBERS = 42
