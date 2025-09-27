@@ -4,8 +4,8 @@ fun main() {
     var fails = 3
 
     while (fails > 0) {
-        val randomNumber1 = (MIN_NUMBER..MAX_NUMBER).random()
-        val randomNumber2 = (MIN_NUMBER..MAX_NUMBER).random()
+        val randomNumber1 = (MIN_NUMBER1..MAX_NUMBER1).random()
+        val randomNumber2 = (MIN_NUMBER1..MAX_NUMBER1).random()
         val resultRandom = randomNumber1 + randomNumber2
         println(
             "Докажите что вы не бот. Решите пример:\n" +
@@ -35,5 +35,5 @@ fun main() {
 println("Доступ запрещен!")
 }
 
-const val MIN_NUMBER = 1
-const val MAX_NUMBER = 9
+const val MIN_NUMBER1 = 1
+const val MAX_NUMBER1 = 9

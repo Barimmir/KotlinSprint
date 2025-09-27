@@ -3,10 +3,10 @@ package org.example.Lesson_6Practice
 fun main() {
 
     var fails = 5
-    val randomNumber = (MAX_NUMBER..MAX_NUMBER).random()
+    val randomNumber = (MIN_NUMBER2..MAX_NUMBER2).random()
 
     println(
-        "Угадайте одно число от $MIN_NUMBER до $MAX_NUMBER\n" +
+        "Угадайте одно число от $MIN_NUMBER2 до $MAX_NUMBER2\n" +
                 "У вас $fails попыток"
     )
     while (fails > 0) {
@@ -35,5 +35,5 @@ fun main() {
 
 }
 
-const val MIN_NUMBER = 1
-const val MAX_NUMBER = 9
+const val MIN_NUMBER2 = 1
+const val MAX_NUMBER2 = 9
