@@ -1,7 +1,6 @@
 package org.example.Lesson_7Practice
 
 fun main() {
-
     val range1 = 'a'..'z'
     val range2 = 0..9
     var password = ""
