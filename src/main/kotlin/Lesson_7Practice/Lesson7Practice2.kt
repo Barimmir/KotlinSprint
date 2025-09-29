@@ -1,7 +1,6 @@
 package org.example.Lesson_7Practice
 
 fun main() {
-
     do {
         val authCode = (1000..9999).random()
         println(
