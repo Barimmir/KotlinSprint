@@ -1,16 +1,19 @@
 package org.example.Lesson_7Practice
 
 fun main() {
-    val range1 = 'a'..'z'
-    val range2 = 0..9
+    val lettersRange = 'a'..'z'
+    val numberRange = 0..9
     var password = ""
 
-    for (position in 1..6) {
+    for (position in MIN_SYMBOL_IN_PASSWORD..MAX_SYMBOL_IN_PASSWORD) {
         if (position % 2 == 0) {
-            password += range2.random()
+            password += numberRange.random().toString()
         } else {
-            password += range1.random()
+            password += lettersRange.random().toString()
         }
     }
     println("Здравствуйте, ваш сегенерированный пароль: $password")
 }
+
+const val MIN_SYMBOL_IN_PASSWORD = 1
+const val MAX_SYMBOL_IN_PASSWORD = 6
