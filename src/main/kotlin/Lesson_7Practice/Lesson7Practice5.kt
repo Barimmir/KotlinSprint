@@ -1,9 +1,9 @@
 package org.example.Lesson_7Practice
 
 fun main() {
-    val capitaLettersRange = ('A'..'Z').toList()
-    val smallLettersRange = ('a'..'z').toList()
-    val numberRange = ('0'..'9').toList()
+    val capitaLettersRange = ('A'..'Z')
+    val smallLettersRange = ('a'..'z')
+    val numberRange = ('0'..'9')
     val allRange = capitaLettersRange + smallLettersRange + numberRange
 
     println("Задайте длинну пароля:")
@@ -14,10 +14,10 @@ fun main() {
             add(smallLettersRange.random())
             add(numberRange.random())
 
-            repeat(input - DECREASE) {
+            repeat(input - REQUIRED_CHAR_TYPES_COUNT) {
                 add(allRange.random())
             }
-            shuffled()
+            shuffle()
         }.joinToString("")
         println(password)
     } else {
@@ -27,4 +27,4 @@ fun main() {
 }
 
 const val MIN_SYMBOL_IN_PASSWORD = 6
-const val DECREASE = 3
+const val REQUIRED_CHAR_TYPES_COUNT = 3
