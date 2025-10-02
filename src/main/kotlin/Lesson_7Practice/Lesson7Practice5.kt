@@ -8,7 +8,7 @@ fun main() {
 
     println("Задайте длинну пароля:")
     val input = readln().toInt()
-    if (input >= MIN_SYMBOL_IN_PASSWORD) {
+    if (input >= MIN_SYMBOL_IN_PASSWORD1) {
         val password = mutableListOf<Char>().apply {
             add(capitaLettersRange.random())
             add(smallLettersRange.random())
@@ -26,5 +26,5 @@ fun main() {
 
 }
 
-const val MIN_SYMBOL_IN_PASSWORD = 6
+const val MIN_SYMBOL_IN_PASSWORD1 = 6
 const val REQUIRED_CHAR_TYPES_COUNT = 3
