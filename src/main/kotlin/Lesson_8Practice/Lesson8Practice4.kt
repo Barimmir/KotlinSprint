@@ -8,14 +8,13 @@ fun main() {
     )
     val deleteIngredients = readln()
 
-    if (deleteIngredients in arrayOfIngredients) {
+    val index = arrayOfIngredients.indexOf(deleteIngredients)
+
+    if ( index != -1) {
         println("На какой ингредиент вы бы хотели заменить?")
         val newIngredients = readln()
-
-        val index = arrayOfIngredients.indexOf(deleteIngredients)
         arrayOfIngredients[index] = newIngredients
-
-        println(arrayOfIngredients.joinToString())
+        println("Готово! Обновлённый списко: ${arrayOfIngredients.joinToString()}")
     } else {
         println("Введите ингредиент который есть в списке")
     }
