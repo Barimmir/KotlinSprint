@@ -1,17 +1,15 @@
 package org.example.Lesson_9Practice
 
 fun main() {
-    val fiveListOfIngredients = mutableListOf<String>()
+    val fiveListOfIngredients = mutableSetOf<String>()
 
-    println("Ввеите $MAX_DISHES_OF_LIST ингредиентов которые будут добавлены в списко:")
+    println("Введите $MAX_DISHES_OF_LIST ингредиентов которые будут добавлены в списко:")
 
-    for ( i in MIN_DISHES_OF_LIST..MAX_DISHES_OF_LIST) {
+    for (i in MIN_DISHES_OF_LIST..MAX_DISHES_OF_LIST) {
         val userInputOfIngredients = readln().trim()
-        if (userInputOfIngredients in fiveListOfIngredients) {
+        if (!fiveListOfIngredients.add(userInputOfIngredients)) {
             println("Такой ингредиент уже есть!")
-            continue
         }
-        fiveListOfIngredients.add(userInputOfIngredients)
     }
     val fiveListOfIngredientsSorted = fiveListOfIngredients.sorted()
     println(fiveListOfIngredientsSorted.joinToString())
