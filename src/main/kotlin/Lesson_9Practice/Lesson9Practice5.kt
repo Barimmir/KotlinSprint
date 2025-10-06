@@ -12,7 +12,11 @@ fun main() {
         }
     }
     val fiveListOfIngredientsSorted = fiveListOfIngredients.sorted()
-    println(fiveListOfIngredientsSorted.joinToString())
+    val resultList = fiveListOfIngredientsSorted.mapIndexed { index, ingredient ->
+        if (index == 0) ingredient.replaceFirstChar { it.uppercase() }
+        else ingredient
+    }
+    println(resultList.joinToString(", "))
 }
 
 const val MIN_DISHES_OF_LIST = 1
