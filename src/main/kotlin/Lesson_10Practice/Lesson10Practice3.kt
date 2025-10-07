@@ -9,6 +9,7 @@ fun main() {
 fun generatesAPassword(lengthPassword: Int): String {
     val rangeSymbol1 = (0..9).joinToString()
     val rangeSymbol2 = "!\"#\$%&'()*+,-./ "
-    val listSymbol =rangeSymbol1 + rangeSymbol2
-    return (1 .. lengthPassword).map {listSymbol.random()}.joinToString("")
+    return (0 until lengthPassword).map{
+        index -> if (index % 2 == 0) rangeSymbol1.random()
+        else rangeSymbol2.random()}.joinToString("")
 }
