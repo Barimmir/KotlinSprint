@@ -2,31 +2,31 @@ package org.example.Lesson_11Practice
 
 class User(
     val id: Int,
-    val Login: String,
-    val Password: String,
-    val Email: String,
+    val login: String,
+    val password: String,
+    val email: String,
 )
 
 fun main() {
     val user1 = User(
         id = 228,
-        Login = "Мамин бродяга",
-        Password = "нагибатор2016",
-        Email = "СамРешу@yandex.ru",
+        login = "Мамин бродяга",
+        password = "нагибатор2016",
+        email = "СамРешу@yandex.ru",
     )
     val user2 = User(
         id = 322,
-        Login = "Папин симпотяга",
-        Password = "ДедИнсайд1998",
-        Email = "АнимэСосед@mail.ru",
+        login = "Папин симпотяга",
+        password = "ДедИнсайд1998",
+        email = "АнимэСосед@mail.ru",
     )
     println(user1.id)
-    println(user1.Login)
-    println(user1.Password)
-    println(user1.Email)
+    println(user1.login)
+    println(user1.password)
+    println(user1.email)
     println()
     println(user2.id)
-    println(user2.Login)
-    println(user2.Password)
-    println(user2.Email)
+    println(user2.login)
+    println(user2.password)
+    println(user2.email)
 }
