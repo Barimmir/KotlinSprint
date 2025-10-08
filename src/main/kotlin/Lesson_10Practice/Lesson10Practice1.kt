@@ -3,8 +3,8 @@ package org.example.Lesson_10Practice
 fun main() {
     val humanPlayer = "Мешок с костями"
     val botPlayer = "Жестянка с авито"
-    val resultHuman = rollTheDice()
-    val resultBot = rollTheDice()
+    val resultHuman = rollTheDice1()
+    val resultBot = rollTheDice1()
     println(
         "$humanPlayer бросает: ${resultHuman}\n" +
                 "$botPlayer бросает: ${resultBot}"
@@ -17,5 +17,5 @@ fun main() {
 
 }
 
-fun rollTheDice(): Int = (1..6).random()
+fun rollTheDice1(): Int = (1..6).random()
 
