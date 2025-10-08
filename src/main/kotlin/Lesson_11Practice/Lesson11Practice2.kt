@@ -26,9 +26,11 @@ class User2(
     fun changePassword() {
         println("Введите текущий пароль:")
         val passwordInput = readlnOrNull().toString()
-        if (passwordInput == this.password){
-            println("Отлично, вы ввели правильный пароль.\n" +
-                    "На какой хотите заменить его?")
+        if (passwordInput == this.password) {
+            println(
+                "Отлично, вы ввели правильный пароль.\n" +
+                        "На какой хотите заменить его?"
+            )
             val newPassword = readlnOrNull().toString()
             this.password = newPassword
             println("Пароль успешно изменён!")
