@@ -5,9 +5,9 @@ class User2(
     val login: String,
     var password: String,
     val email: String,
-    var bio: String? = null
+    var bio: String
 ) {
-    fun displayInfo() {
+    fun displaysInformation() {
         println(
             "Информация пользователя\n" +
                     "Идентификатор: $id\n" +
@@ -18,7 +18,7 @@ class User2(
         )
     }
 
-    fun updateBio() {
+    fun recordInformationBio() {
         println("Введите информацию о себе")
         bio = readlnOrNull().toString()
     }
@@ -26,13 +26,11 @@ class User2(
     fun changePassword() {
         println("Введите текущий пароль:")
         val passwordInput = readlnOrNull().toString()
-        if (passwordInput == password) {
-            println(
-                "Отлично, вы ввели правильный пароль.\n" +
-                        "На какой хотите заменить его?"
-            )
-            val newPassword = readln()
-            password = newPassword
+        if (passwordInput == this.password){
+            println("Отлично, вы ввели правильный пароль.\n" +
+                    "На какой хотите заменить его?")
+            val newPassword = readlnOrNull().toString()
+            this.password = newPassword
             println("Пароль успешно изменён!")
         } else {
             println("Вы ввели неправильный логин или пароль")
@@ -48,7 +46,7 @@ fun main() {
         email = "gigaMan@mail.ru",
         bio = "Верну Саске в Коноху"
     )
-    user1.updateBio()
+    user1.recordInformationBio()
     user1.changePassword()
-    user1.displayInfo()
+    user1.displaysInformation()
 }
