@@ -2,16 +2,16 @@ package org.example.Lesson_11Practice
 
 class VoiceRoom(
     val cover: String,
-    val nameRoom: String,
+    val roomName: String,
 ) {
     private val participants = mutableListOf<User3>()
 
     fun addUser(user: User3) {
         participants.add(user)
-        println("Пользователь ${user.name}  вошёл в комнату '${nameRoom}'")
+        println("Пользователь ${user.name}  вошёл в комнату '${roomName}'")
     }
 
-    fun newStatus(userName: String, newStatus: UserStatus) {
+    fun updateStatus(userName: String, newStatus: UserStatus) {
         val user = participants.find { it.name == userName }
         if (user != null) {
             user.status = newStatus
@@ -25,7 +25,7 @@ class VoiceRoom(
         println(
             "\nИнформация о комнате\n" +
                     "Обложка: $cover\n" +
-                    "Название: $nameRoom\n" +
+                    "Название: $roomName\n" +
                     "Участники (${participants.size}):"
         )
         participants.forEach { user ->
@@ -60,19 +60,17 @@ enum class UserStatus(val displayName: String) {
 fun main() {
     val room = VoiceRoom(
         cover = "На картинке цитата:\"Не я такой, а жизнь такая\"",
-        nameRoom = "За падиком",
+        roomName = "За падиком",
     )
     val user1 = User3(
         name = "Петя",
         avatar = "Картинка с котиком",
         status = UserStatus.MICROPHONE_OFF
-
     )
     val user2 = User3(
         name = "Саня",
         avatar = "Злой шпиц",
         status = UserStatus.SPEAKING
-
     )
     val user3 = User3(
         name = "Маша",
@@ -85,8 +83,8 @@ fun main() {
 
     room.showRoomInfo()
 
-    room.newStatus("Петя", UserStatus.SPEAKING)
-    room.newStatus("Маша", UserStatus.SPEAKING)
+    room.updateStatus("Петя", UserStatus.SPEAKING)
+    room.updateStatus("Маша", UserStatus.SPEAKING)
 
     room.showRoomInfo()
 
