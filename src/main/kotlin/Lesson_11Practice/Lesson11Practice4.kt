@@ -5,12 +5,13 @@ class RecipeCategory(
     val nameCategory: String,
     val description: String,
     val imageUrl: String,
+    val list: List<Recipe>,
 )
 
 class Ingredient(
     val id: Int,
     val name: String,
-    val quantity: Int,
+    val quantity: String,
     val units: String,
 )
 
@@ -21,5 +22,5 @@ class Recipe(
     val name: String,
     val description: String,
     val ingredients: List<Ingredient>,
-    val cooking : String,
+    val cooking: List<String>,
 )
