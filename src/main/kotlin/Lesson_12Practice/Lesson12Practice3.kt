@@ -1,8 +1,8 @@
 package org.example.Lesson_12Practice
 
 class WeatherDay3(_tempDay: Int, _tempNight: Int, _precipitation: Boolean) {
-    var tempDay = _tempDay - 273.15
-    var tempNight = _tempNight - 273.15
+    var tempDay = (_tempDay - 273.15).toInt()
+    var tempNight = (_tempNight - 273.15).toInt()
     var precipitation = _precipitation
 
     fun printInfo() {
