@@ -1,6 +1,6 @@
 package org.example.Lesson_12Practice
 
-class WeatherDay3(_tempDay: Int, _tempNight: Int, _precipitation: Boolean,) {
+class WeatherDay3(_tempDay: Int, _tempNight: Int, _precipitation: Boolean) {
     var tempDay = _tempDay - 273.15
     var tempNight = _tempNight - 273.15
     var precipitation = _precipitation
