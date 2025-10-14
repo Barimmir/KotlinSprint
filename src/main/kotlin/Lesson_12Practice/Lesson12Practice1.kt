@@ -1,6 +1,6 @@
 package org.example.Lesson_12Practice
 
-class WeatherDay{
+class WeatherDay {
     var dayTemperature = 10
     var nightTemperature = 0
     var isPrecipitation = false
