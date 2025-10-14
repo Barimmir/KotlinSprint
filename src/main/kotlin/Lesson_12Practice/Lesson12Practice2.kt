@@ -1,24 +1,24 @@
 package org.example.Lesson_12Practice
 
-class WeatherDay2(_tempDay: Int, _tempNight: Int, _precipitation: Boolean,) {
-    var tempDay = _tempDay
-    var tempNight = _tempNight
-    var precipitation = _precipitation
-
+class WeatherDay2(
+    var dayTemperature: Int,
+    var nightTemperature: Int,
+    var isPrecipitation: Boolean
+) {
     fun printInfo() {
         println(
-            "Температура днём: $tempDay\n" +
-                    "Температура ночью: $tempNight\n" +
-                    "Осадки: $precipitation"
+            "Температура днём: $dayTemperature\n" +
+                    "Температура ночью: $nightTemperature\n" +
+                    "Осадки: $isPrecipitation"
         )
     }
 }
 
 fun main() {
     val day1 = WeatherDay2(
-        _tempDay = 3,
-        _tempNight = -10,
-        _precipitation = true
+        dayTemperature = 3,
+        nightTemperature = -10,
+        isPrecipitation = true
     )
     day1.printInfo()
 }
