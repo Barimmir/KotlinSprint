@@ -22,4 +22,5 @@ fun main() {
     )
     day.printInfo()
 }
+
 const val CONVERTING_KELVIN_TO_CELSIUS = 273.15
