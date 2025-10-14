@@ -1,17 +1,18 @@
 package org.example.Lesson_12Practice
 
-class WeatherDay4(_tempDay: Int, _tempNight: Int, _precipitation: Boolean) {
-    var tempDay = (_tempDay - 273.15).toInt()
-    var tempNight = (_tempNight - 273.15).toInt()
-    var precipitation = _precipitation
+class WeatherDay4(kelvinDayTemperature: Int, kelvinNightTemperature: Int, isPrecipitation: Boolean) {
+    val celsiusDayTemperature = (kelvinDayTemperature - CONVERTING_KELVIN_TO_CELSIUS2).toInt()
+    val celsiusNightTemperature = (kelvinNightTemperature - CONVERTING_KELVIN_TO_CELSIUS2).toInt()
+    val isPrecipitation = isPrecipitation
 
-    private fun printInfo() {
+    fun printInfo() {
         println(
-            "Температура днём: $tempDay\n" +
-                    "Температура ночью: $tempNight\n" +
-                    "Осадки: $precipitation"
+            "Температура днём: $celsiusDayTemperature\n" +
+                    "Температура ночью: $celsiusNightTemperature\n" +
+                    "Осадки: $isPrecipitation"
         )
     }
+
     init {
         printInfo()
     }
@@ -19,8 +20,10 @@ class WeatherDay4(_tempDay: Int, _tempNight: Int, _precipitation: Boolean) {
 
 fun main() {
     val day = WeatherDay4(
-        _tempDay = 340,
-        _tempNight = 270,
-        _precipitation = false,
+        kelvinDayTemperature = 340,
+        kelvinNightTemperature = 270,
+        isPrecipitation = false,
     )
 }
+
+const val CONVERTING_KELVIN_TO_CELSIUS2 = 273.15
