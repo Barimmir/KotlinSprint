@@ -1,9 +1,9 @@
 package org.example.Lesson_13Practice
 
 class User(
-    name: String,
-    number: Long,
-    company: String?,
+    val name: String,
+    val number: Long,
+    val company: String?,
 )
 
 fun main() {
