@@ -7,12 +7,12 @@ class User3(
 )
 
 fun main() {
-    val contact = listOf(
+    val contacts = listOf(
         User3("Алексей", 89997776655, null),
         User3("Сява", 89993336655, null),
         User3("Гиви", 89993221763, "null"),
         User3("Фрося", 89992221232, "Голубая лагуна"),
         User3("Паша", 89994443456, "Собиратель консервных банок"),
     )
-    contact.filter { it.company != null }.forEach { println(it.company) }
+    contacts.mapNotNull { it.company }.filter { it != "null" }.toSet().forEach { println(it) }
 }
