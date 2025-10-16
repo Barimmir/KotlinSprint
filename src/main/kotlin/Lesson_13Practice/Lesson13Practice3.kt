@@ -14,5 +14,5 @@ fun main() {
         User3("Фрося", 89992221232, "Голубая лагуна"),
         User3("Паша", 89994443456, "Собиратель консервных банок"),
     )
-    contact.forEach { println(it.company) }
+    contact.filter { it.company != null }.forEach { println(it.company) }
 }
