@@ -9,25 +9,17 @@ class WeatherDay5(kelvinDayTemperature: Int, kelvinNightTemperature: Int, isPrec
 }
 
 fun main() {
-    val dataForTheMonth = mutableListOf<Triple<Int, Int, Boolean>>()
-    for (it in 1..30) {
-        val day = WeatherDay5(
+    val dataForTheMonth = List<WeatherDay5>(MAX_DAY_IN_MONTH) {
+        WeatherDay5(
             kelvinDayTemperature = (184..329).random(),
             kelvinNightTemperature = (184..329).random(),
             isPrecipitation = Random.nextBoolean(),
-
-            )
-        dataForTheMonth.add(
-            Triple(
-                day.celsiusDayTemperature,
-                day.celsiusNightTemperature,
-                day.isPrecipitation,
-            )
         )
     }
-    val dayTemperatureInMonthList = dataForTheMonth.map { it.first }
-    val nightTemperatureInMonthList = dataForTheMonth.map { it.second }
-    val isPrecipitationInMonthList = dataForTheMonth.map { it.third }
+
+    val dayTemperatureInMonthList = dataForTheMonth.map { it.celsiusDayTemperature }
+    val nightTemperatureInMonthList = dataForTheMonth.map { it.celsiusNightTemperature }
+    val isPrecipitationInMonthList = dataForTheMonth.map { it.isPrecipitation }
     val averageMonthTemperatureDay = dayTemperatureInMonthList.average().toInt()
     val averageMonthTemperatureNight = nightTemperatureInMonthList.average().toInt()
     val daysPrecipitation = isPrecipitationInMonthList.count { it }
@@ -39,3 +31,4 @@ fun main() {
 }
 
 const val CONVERTING_KELVIN_TO_CELSIUS3 = 273.15
+const val MAX_DAY_IN_MONTH = 30
