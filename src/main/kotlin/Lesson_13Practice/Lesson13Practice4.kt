@@ -16,24 +16,33 @@ class User4(
 
 fun main() {
     val phoneBook = mutableListOf<User4>()
+    while (true) {
+        println(
+            "Введите своё имя:\n" +
+                    "Внимание! Оставте поле пустым если хотет выйти из программы!"
+        )
+        val nameInput = readln().trim()
+        if (nameInput.isEmpty()) {
+            println("Выход из программы")
+            break
+        }
+        println("Введите свой номер:")
+        val numberInput = readln()?.toLongOrNull()
+        if (numberInput == null) {
+            println("Номер не введён!Повторите попытку")
+        }
+        println("Введите свою компанию:")
+        var companyInput = readln() ?: null
+        if (companyInput == null) {
+            companyInput = "не указано"
+        }
 
-    println("Введите свой номер:")
-    val numberInput = readln()?.toLongOrNull()
-    if (numberInput == null) {
-        println("Номер не введён!Повторите попытку")
+        val contact = User4(
+            name = null,
+            number = numberInput,
+            company = companyInput
+        )
+        phoneBook.add(contact)
     }
-    println("Введите свою компанию:")
-    var companyInput = readln() ?: null
-    if (companyInput == null) {
-        companyInput = "не указано"
-    }
-
-    val contact = User4(
-        name = null,
-        number = numberInput,
-        company = companyInput
-    )
-    phoneBook.add(contact)
-
     phoneBook.forEach { it.printInfo() }
 }
