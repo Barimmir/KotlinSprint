@@ -34,6 +34,5 @@ fun main() {
         company = companyInput
     )
     phoneBook.add(contact)
-
     phoneBook.forEach { it.printInfo() }
 }
