@@ -2,14 +2,14 @@ package org.example.Lesson_13Practice
 
 class User4(
     val name: String?,
-    val number: Long?,
+    val number: Long,
     val company: String?,
 ) {
     fun printInfo() {
         println(
             "Имя: ${name ?: "не указано"}\n" +
                     "Номер: $number\n" +
-                    "Компания: $company"
+                    "Компания: ${company ?: "не указана"}"
         )
     }
 }
@@ -17,21 +17,20 @@ class User4(
 fun main() {
     val phoneBook = mutableListOf<User4>()
 
-    println("Введите свой номер:")
-    val numberInput = readln()?.toLongOrNull()
+    println("Введите номер телефона:")
+    val numberInput = readln().toLongOrNull()
     if (numberInput == null) {
-        println("Номер не введён!Повторите попытку")
+        println("Ошибка: номер телефона должен содержать только цифры! Запись не добавлена.")
+        return
     }
-    println("Введите свою компанию:")
-    var companyInput = readln() ?: null
-    if (companyInput == null) {
-        companyInput = "не указано"
-    }
+    println("Введите название компании:")
+    val companyInput = readln().trim()
+    val company = if (companyInput.isEmpty()) null else companyInput
 
     val contact = User4(
         name = null,
         number = numberInput,
-        company = companyInput
+        company = company
     )
     phoneBook.add(contact)
     phoneBook.forEach { it.printInfo() }
