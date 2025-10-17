@@ -30,14 +30,14 @@ fun main() {
         val numberInput = readln().toLongOrNull()
         if (numberInput == null) {
             println("Ошибка: номер телефона должен содержать только цифры! Запись не добавлена.")
-            return
+            continue
         }
         println("Введите название компании:")
         val companyInput = readln().trim()
         val company = if (companyInput.isEmpty()) null else companyInput
 
         val contact = User4(
-            name = null,
+            name = nameInput,
             number = numberInput,
             company = company
         )
