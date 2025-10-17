@@ -1,24 +1,30 @@
 package org.example.Lesson_14Practice
 
 open class Liner(
-    val name: String = "Лайнер",
-    val speed: Int = 500,
-    val capacity: Int = 1000,
+    val name: String,
+    val speed: Int,
+    val capacity: Int,
 )
 
 class Cargo(
-    name: String = "Грузовой",
-    speed: Int = 250,
-    capacity: Int = 1200,
+    name: String,
+    speed: Int,
+    capacity: Int,
 ) : Liner(name, speed, capacity)
 
 class Icebreaker(
-    name: String = "Ледокол",
-    speed: Int = 200,
-    capacity: Int = 750,
+    name: String,
+    speed: Int,
+    capacity: Int,
 ) : Liner(name, speed, capacity) {
     fun chopTheIce() {
         println("Херачу лёд хоть я каменщик и работаю 3 дня")
     }
+}
+
+fun main() {
+    val liner = Liner("Лайнер", 500, 1000)
+    val cargo = Cargo("Грузовой",250,1200)
+    val icebreaker = Icebreaker("Ледокол",200,750)
 }
 
