@@ -1,9 +1,9 @@
 package org.example.Lesson_14Practice
 
 open class Liner1(
-    val name: String,
-    val speed: Int,
-    val capacity: Int,
+    open val name: String,
+    open val speed: Int,
+    open val capacity: Int,
 ) {
     fun printInfo() {
         println(
@@ -20,9 +20,9 @@ open class Liner1(
 }
 
 class Cargo1(
-    name: String,
-    speed: Int,
-    capacity: Int,
+    override val name: String,
+    override val speed: Int,
+    override val capacity: Int,
 ) : Liner1(name, speed, capacity) {
     fun loadingCrane() {
         println("грузовой корабль активирует погрузочный кран")
@@ -30,9 +30,9 @@ class Cargo1(
 }
 
 class Icebreaker1(
-    name: String,
-    speed: Int,
-    capacity: Int,
+    override val name: String,
+    override val speed: Int,
+    override val capacity: Int,
 ) : Liner1(name, speed, capacity) {
     fun chopTheIce() {
         println("Херачу лёд хоть я каменщик и работаю 3 дня")
