@@ -27,4 +27,3 @@ fun main() {
     val cargo = Cargo("Грузовой",250,1200)
     val icebreaker = Icebreaker("Ледокол",200,750)
 }
-
