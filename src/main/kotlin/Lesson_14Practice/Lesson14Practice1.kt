@@ -18,7 +18,7 @@ class Icebreaker(
     override val capacity: Int,
 ) : Liner(name, speed, capacity) {
     fun chopTheIce() {
-        println("Херачу лёд хоть я каменщик и работаю 3 дня!")
+        println("Херачу лёд хоть, я каменщик и работаю 3 дня!")
     }
 }
 
