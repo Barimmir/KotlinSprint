@@ -1,35 +1,14 @@
 package org.example.Lesson_15Practice
 
 interface Flying {
-    fun walks() {
-        println("Важно ходит")
-    }
-
-    fun stops() {
-        println("Останаливается и думает о вечном")
-    }
-
-    fun preparingToTakeOf() {
-        println("Готовится взмахнуть в небо")
-    }
-
-    fun takingOff() {
-        println("Взмахнула и летит")
-    }
-
-    fun landing() {
-        println("Приземляется")
-    }
+    fun preparingToTakeOf()
+    fun takingOff()
+    fun landing()
 }
 
 interface Floating {
-    fun startToSwim() {
-        println("Начинает плыть")
-    }
-
-    fun stops() {
-        println("Останавливается")
-    }
+    fun startToSwim()
+    fun stops()
 }
 
 abstract class Animal {
@@ -38,29 +17,59 @@ abstract class Animal {
 
 class CrucianCarp(
     override val name: String,
-) : Animal(), Floating
+) : Animal(), Floating {
+    override fun startToSwim() {
+        println("$name плывёт")
+    }
+
+    override fun stops() {
+        println("$name останавливаетя")
+    }
+}
 
 class Seagull(
     override val name: String,
-) : Animal(), Flying
+) : Animal(), Flying {
+    override fun preparingToTakeOf() {
+        println("$name готовится взлететь")
+    }
+
+    override fun takingOff() {
+        println("$name летит")
+    }
+
+    override fun landing() {
+        println("$name приземляется")
+    }
+}
 
 class Duck(
     override val name: String,
-) : Animal(), Flying
+) : Animal(), Flying {
+    override fun preparingToTakeOf() {
+        println("$name готовится взлететь")
+    }
+
+    override fun takingOff() {
+        println("$name летит")
+    }
+
+    override fun landing() {
+        println("$name приземляется")
+    }
+}
 
 fun main() {
     val crucianCarp = CrucianCarp("Карась")
     val seagull = Seagull("Чайка")
     val duck = Duck("Утка")
-    println(crucianCarp.name)
     crucianCarp.startToSwim()
     crucianCarp.stops()
-    println(seagull.name)
     seagull.preparingToTakeOf()
     seagull.takingOff()
     seagull.landing()
-    println(duck.name)
-    duck.walks()
-    duck.stops()
+    duck.preparingToTakeOf()
+    duck.takingOff()
+    duck.landing()
 }
 
