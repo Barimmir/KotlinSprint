@@ -1,7 +1,7 @@
 package org.example.Lesson_14Practice
 
 open class Message(
-    val id: String = (1..9).random().toString(),
+    val id: String,
     val text: String,
     val author: String,
 ) {
@@ -11,10 +11,11 @@ open class Message(
 }
 
 class ChildMessage(
+    id: String,
     text: String,
     author: String,
     val parentMessageId: String,
-) : Message(text = text, author = author) {
+) : Message(id = id, text = text, author = author) {
     override fun display(): String {
         return "---$author: $text"
     }
@@ -22,21 +23,34 @@ class ChildMessage(
 
 class Chat {
     private val listMessage = mutableListOf<Message>()
+    private var messageCounter = 1
+
+    private fun generateId(): String {
+        return "${messageCounter++}"
+    }
 
     fun addMessage(text: String, author: String): String {
-        val message = Message(text = text, author = author)
+        val messageId = generateId()
+        val message = Message(id = messageId, text = text, author = author)
         listMessage.add(message)
-        return message.id
+        return messageId
     }
 
     fun addThreadMessage(text: String, author: String, parentMessageId: String): String {
         val parentExists = listMessage.any { it.id == parentMessageId }
         if (!parentExists) {
             println("Родительское  сообщение с id: $parentMessageId не найдено!")
+            return ""
         }
-        val treadMessage = ChildMessage(text = text, author = author, parentMessageId = parentMessageId)
-        listMessage.add(treadMessage)
-        return treadMessage.id
+        val threadMessageId = generateId()
+        val threadMessage = ChildMessage(
+            id = threadMessageId,
+            text = text,
+            author = author,
+            parentMessageId = parentMessageId
+        )
+        listMessage.add(threadMessage)
+        return threadMessageId
     }
 
     fun printChat() {
