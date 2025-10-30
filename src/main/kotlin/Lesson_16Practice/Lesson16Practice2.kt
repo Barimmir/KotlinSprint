@@ -3,21 +3,21 @@ package org.example.Lesson_16Practice
 import kotlin.math.pow
 
 class Circle(
-    private val radius: Int,
+    private val radius: Double,
 ) {
-    private val pi = 3.14
-
-    fun perimeter() {
-        println("Длина окружности: ${(pi * radius).pow(2)}")
+    fun getPerimeter(): Double {
+        return 2 * PI * radius
     }
 
-    fun area() {
-        println("Площадь круга: ${pi * (radius * radius)}")
+    fun getArea(): Double {
+        return PI * radius.pow(2)
     }
 }
 
 fun main() {
-    val circle = Circle(3)
-    circle.perimeter()
-    circle.area()
+    val circle = Circle(3.0)
+    println("Длина окружности: ${circle.getPerimeter()}")
+    println("Площадь круга: ${circle.getArea()}")
 }
+
+private const val PI = 3.14
