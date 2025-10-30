@@ -4,12 +4,8 @@ class User(
     private val login: String,
     private val password: String,
 ) {
-    fun validatePassword(inputPassword: String): Boolean {
-        return inputPassword == password
-    }
-
-    fun validateLogin(inputLogin: String): Boolean {
-        return inputLogin == login
+    fun validate(inputLogin: String, inputPassword: String): Boolean {
+        return inputLogin == login && inputPassword == password
     }
 }
 
@@ -17,8 +13,5 @@ fun main() {
     val user = User("Лёха", "123")
     val login = "Лёха"
     val password = "123"
-    println(
-        "Логин: ${user.validateLogin(login)} \n" +
-                "Пароль: ${user.validatePassword(password)}"
-    )
+    println("Логин и пароль: ${user.validate(login, password)}")
 }
