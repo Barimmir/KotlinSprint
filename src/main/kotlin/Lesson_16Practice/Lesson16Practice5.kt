@@ -3,7 +3,7 @@ package org.example.Lesson_16Practice
 class Character(
     val name: String,
     private var health: Int,
-    var damage: Int,
+    private var damage: Int,
 ) {
     fun printInfo() {
         println(
@@ -15,16 +15,14 @@ class Character(
 
     fun getHealth(healthPoison: Int) {
         if (health <= 0) {
-            println("Персонжа мёртв, лечение невозможно!")
+            println("Персонжа $name мёртв, лечение невозможно!")
         } else {
-            val newHealth = health + healthPoison
-            health = newHealth
+            health += healthPoison
         }
     }
 
     fun getDamage(damage: Int) {
-        val newHealth = health - damage
-        health = newHealth
+        health -= damage
         if (health <= 0) {
             dying()
         }
@@ -33,7 +31,7 @@ class Character(
     private fun dying() {
         health = 0
         damage = 0
-        println("Персонаж мертв")
+        println("Персонаж $name мертв")
     }
 }
 
