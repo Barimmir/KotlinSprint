@@ -5,25 +5,18 @@ class Quiz(
     answer: String,
 ) {
     val question: String = question
-        get() {
-            println("Бургеры топ?")
-            return field
-        }
+        get() = field
     var answer: String = answer
-        get() {
-            println("Бургеры фигня, пицца топ!")
-            return field
-        }
+        get() = field
         set(value) {
-            println("*Подзатыльник*\n" +
-                    "Да, бургеры топ начальник!")
             field = value
         }
 }
 
 fun main() {
-    val quiz = Quiz("", "")
-    quiz.question
-    quiz.answer
-    quiz.answer = ""
+    val quiz = Quiz("Бургеры топ?", "Нет, пицца топ!")
+    println(quiz.question)
+    println(quiz.answer)
+    quiz.answer = "*позатыльник* Да, бургеры топ босс!"
+    println(quiz.answer)
 }
