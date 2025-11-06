@@ -7,6 +7,7 @@ class User34(
     var login: String = login
         set(value) {
             println("Логин $field успешно изменён на $value")
+            field = value
         }
     var password: String = password
         get() = "*".repeat(field.length)
@@ -14,13 +15,13 @@ class User34(
             if (field != value) {
                 println("Нельзя изменить пароль!")
             }
-            field = value
         }
 }
 
 fun main() {
-    val user = User34("ГачаПон","фифа228")
+    val user = User34("ГачаПон", "фифа228")
     user.login = "Банан"
     user.password = "228попиросим"
     println(user.password)
+    println(user.login)
 }
