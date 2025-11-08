@@ -20,10 +20,6 @@ class Fox(
     override fun eat(): String {
         return super.eat()
     }
-
-    override fun sleep(): String {
-        return super.sleep()
-    }
 }
 
 class Dog(
@@ -33,10 +29,6 @@ class Dog(
     override fun eat(): String {
         return super.eat()
     }
-
-    override fun sleep(): String {
-        return super.sleep()
-    }
 }
 
 class Cat(
@@ -45,10 +37,6 @@ class Cat(
 ) : Animal(animal, eat) {
     override fun eat(): String {
         return super.eat()
-    }
-
-    override fun sleep(): String {
-        return super.sleep()
     }
 }
 
