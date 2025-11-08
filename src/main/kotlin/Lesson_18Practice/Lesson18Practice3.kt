@@ -1,53 +1,38 @@
 package org.example.Lesson_18Practice
 
 abstract class Animal(
-    open val animal: String,
+    open val name: String,
     open val eat: String
 ) {
-    open fun eat(): String {
-        return "$animal ест -> $eat"
+    open fun eat() {
+        println("$name ест -> $eat")
     }
 
-    open fun sleep(): String {
-        return "$animal спит"
+    open fun sleep() {
+        println("$name спит")
     }
 }
 
 class Fox(
-    override val animal: String = "Лиса",
+    override val name: String = "Лиса",
     override val eat: String = "ягоды",
-) : Animal(animal, eat) {
-    override fun eat(): String {
-        return super.eat()
-    }
-}
+) : Animal(name, eat)
 
 class Dog(
-    override val animal: String = "Собака",
+    override val name: String = "Собака",
     override val eat: String = "кости",
-) : Animal(animal, eat) {
-    override fun eat(): String {
-        return super.eat()
-    }
-}
+) : Animal(name, eat)
 
 class Cat(
-    override val animal: String = "Кошка",
+    override val name: String = "Кошка",
     override val eat: String = "рыбу",
-) : Animal(animal, eat) {
-    override fun eat(): String {
-        return super.eat()
-    }
-}
+) : Animal(name, eat)
 
 fun main() {
-    val listAnimal = mutableListOf<Animal>()
+    val listAnimal = listOf(Dog(), Fox(), Cat())
     val dog = Dog()
     val fox = Fox()
     val cat = Cat()
-    listAnimal.add(dog)
-    listAnimal.add(fox)
-    listAnimal.add(cat)
-    listAnimal.forEach { println(it.eat()) }
-    listAnimal.forEach { println(it.sleep()) }
+    listAnimal.forEach { it.eat() }
+    listAnimal.forEach { it.sleep() }
 }
