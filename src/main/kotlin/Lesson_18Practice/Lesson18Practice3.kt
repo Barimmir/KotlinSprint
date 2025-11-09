@@ -8,7 +8,7 @@ abstract class Animal(
         println("$name ест -> $eat")
     }
 
-    open fun sleep() {
+    fun sleep() {
         println("$name спит")
     }
 }
