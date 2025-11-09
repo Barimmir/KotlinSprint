@@ -4,7 +4,7 @@ abstract class Animal(
     open val name: String,
     open val eat: String
 ) {
-    open fun eat() {
+    fun eat() {
         println("$name ест -> $eat")
     }
 
