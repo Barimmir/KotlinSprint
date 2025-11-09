@@ -3,7 +3,7 @@ package org.example.Lesson_18Practice
 abstract class Dice(
     open val facets: Int,
 ) {
-    open fun trowADice() {
+    fun trowADice() {
         println("Выпало ${(MIN_FACETS..facets).random()}")
     }
 }
