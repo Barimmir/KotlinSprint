@@ -5,7 +5,7 @@ enum class Category {
     STATIONERY,
     OTHER;
 
-    open fun printCategory(): String {
+    fun getCategoryName(): String {
         return when (this) {
             CLOTHING -> "Одежда"
             STATIONERY -> "Канцелярские товары"
@@ -23,7 +23,7 @@ class Product(
         println(
             "Товар: $name\n" +
                     "id: $id\n" +
-                    "Категория: ${category.printCategory()}"
+                    "Категория: ${category.getCategoryName()}"
         )
     }
 }
