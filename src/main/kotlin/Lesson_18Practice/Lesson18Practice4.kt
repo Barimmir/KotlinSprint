@@ -21,12 +21,7 @@ open class Rectangle(
 class Cube(
     override val name: String,
     private val ribLength: Int,
-) : Rectangle(name, ribLength, ribLength, ribLength) {
-    override fun getSquare(): Int {
-        val square = FACETS_CUBE * (ribLength * ribLength)
-        return square
-    }
-}
+) : Rectangle(name, ribLength, ribLength, ribLength)
 
 fun main() {
     val boxList = listOf(
@@ -37,4 +32,3 @@ fun main() {
 }
 
 const val FACETS_RECTANGLE = 2
-const val FACETS_CUBE = 6
