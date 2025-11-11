@@ -1,17 +1,17 @@
 package org.example.Lesson_19Practice
 
-import javax.management.NotificationEmitter
-
 class Spaceship(
     val nameShip: String,
-){
-    fun takeOff(){
+) {
+    fun takeOff() {
         println("Корабль $nameShip взлетает")
     }
-    fun landing(){
+
+    fun landing() {
         TODO("Добавь логику,дураааашка")
     }
-    fun shootAsteroid(){
+
+    fun shootAsteroid() {
         //TODO Добавить логику стрельбы
         println("Корабль $nameShip стреляет в астероиды")
     }
