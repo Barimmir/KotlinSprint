@@ -7,7 +7,7 @@ enum class Gender(val nameGender: String) {
 
 class User228 {
     private var nameUser = ""
-    private var genderUser: String? = null
+    private var genderUser: Gender? = null
     fun getName() {
         println("Введите ваше имя:")
         val nameInput = readln()
@@ -18,8 +18,8 @@ class User228 {
         println("Введите пол:")
         val genderInput = readln()
         genderUser = when (genderInput) {
-            "Мужской" -> Gender.MALE.nameGender
-            "Женский" -> Gender.FEMALE.nameGender
+            "Мужской" -> Gender.MALE
+            "Женский" -> Gender.FEMALE
             else -> {
                 println("Нет такого пола, иди в твитер жалуйся")
                 null
@@ -31,7 +31,7 @@ class User228 {
     fun printInfo() {
         println(
             "Имя: $nameUser\n" +
-                    "Пол: $genderUser"
+                    "Пол: ${genderUser?.nameGender}"
         )
     }
 }
