@@ -5,10 +5,9 @@ enum class Gender(val nameGender: String) {
     FEMALE("Женский")
 }
 
-class User228(
-    var nameUser: String,
-    var genderUser: Gender
-) {
+class User228 {
+    private var nameUser = ""
+    private var genderUser: String? = null
     fun getName() {
         println("Введите ваше имя:")
         val nameInput = readln()
@@ -18,22 +17,25 @@ class User228(
     fun getGender() {
         println("Введите пол:")
         val genderInput = readln()
-        if (genderInput == Gender.MALE.nameGender) {
-            genderUser = Gender.MALE
-        } else if (genderInput == Gender.FEMALE.nameGender) {
-            genderUser = Gender.FEMALE
-        } else {
-            println("Нет такого пола, иди в твитер жалуйся)")
+        genderUser = when (genderInput) {
+            "Мужской" -> Gender.MALE.nameGender
+            "Женский" -> Gender.FEMALE.nameGender
+            else -> {
+                println("Нет такого пола, иди в твитер жалуйся")
+                null
+            }
         }
+
     }
 
     fun printInfo() {
         println(
             "Имя: $nameUser\n" +
-                    "Пол: ${genderUser.nameGender}"
+                    "Пол: $genderUser"
         )
     }
 }
+
 
 fun main() {
     println(
@@ -42,7 +44,7 @@ fun main() {
     )
     val listUser = mutableListOf<User228>()
     for (i in MIN_LIST_USER..MAX_LIST_USER) {
-        val user = User228("", Gender.FEMALE)
+        val user = User228()
         user.getName()
         user.getGender()
         listUser.add(user)
