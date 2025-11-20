@@ -8,17 +8,11 @@ data class MainScreenState(
 class MainScreenViewModel() {
     var mainScreenState: MainScreenState = MainScreenState()
     fun loadData() {
-        println(
-            "Состояние: $mainScreenState"
-        )
+        println("Состояние: $mainScreenState")
         mainScreenState = mainScreenState.copy(data = "Загрузка данных", isLoading = true)
-        println(
-            "Состояние: $mainScreenState"
-        )
+        println("Состояние: $mainScreenState")
         mainScreenState = mainScreenState.copy(data = "Данные успешно загружены", isLoading = false)
-        println(
-            "Состояние: $mainScreenState"
-        )
+        println("Состояние: $mainScreenState")
     }
 }
 
